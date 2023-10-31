@@ -45,10 +45,17 @@ updateScore(newScore) {
     }
 }  
 
+
 class AdminPlayer extends Player {
+    constructor(first, last, powers){
+        super(first, last); //You got multiple constructors. You have to call the parent constructor first 
+        //using super, pass through any values you want. 
+        this.powers = powers;
+    }
     isAdmin = true;
 }
-const admin = new AdminPlayer();
+const admin = new AdminPlayer("admin", "mcAdmins", ["delete", "restore world"]);
+// const admin = new AdminPlayer("admin", "mcAdmins");
 
 // const player1 = new Player("blue", "Steel");
 // Player1.taunt();
