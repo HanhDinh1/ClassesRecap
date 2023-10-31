@@ -1,10 +1,17 @@
 class Player {
+    static description = "Players In Our Game"; 
+    //If we put "static" in front of a property like one of these class fields,
+    //or if we put that in front of a method, that tells JavaScript that property or method
+    //exists on the class itself and is not going to exist on each individual instance.
     #score = 0; 
     #numLives = 10;
 constructor(first, last) {
     this.first = first;
     this.last = last;
     this.#secret();
+}
+static randomPlayers() {
+return new Player ("Andy", "Samberg")
 }
 get fullName() {
     return `${this.first} ${this.last}`;
