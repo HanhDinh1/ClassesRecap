@@ -43,9 +43,14 @@ updateScore(newScore) {
     #secret(){
         console.log("SECRET!")
     }
-}   
+}  
 
-const player1 = new Player("blue", "Steel");
+class AdminPlayer extends Player {
+    isAdmin = true;
+}
+const admin = new AdminPlayer();
+
+// const player1 = new Player("blue", "Steel");
 // Player1.taunt();
 
 // const Player2 = new Player("kenny", "Brow");
@@ -60,15 +65,15 @@ const player1 = new Player("blue", "Steel");
 // console.log(player1.updateScore(28));
 // console.log(player1.getScore());
 
-console.log(player1.score);
-player1.score = 28;
-console.log(player1.score);
+// console.log(player1.score);
+// player1.score = 28;
+// console.log(player1.score);
 
-player1.score
-player1.score = 29;
-player1.fullName
+// player1.score
+// player1.score = 29;
+// player1.fullName
 
-console.log(player1.fullName);
-player1.fullName = "Amy adams";
-console.log(player1);
+// console.log(player1.fullName);
+// player1.fullName = "Amy adams";
+// console.log(player1);
 
