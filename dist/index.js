@@ -7,10 +7,22 @@ constructor(first, last) {
     this.#secret();
 }
 get fullName() {
-    return `{this.first} {this.last}`;
+    return `${this.first} ${this.last}`;
+}
+
+set fullName(newName){
+    const [first, last] = newName.split(" ");
+    this.first = first;
+    this.last = last;
 }
 get score() {
     return this.#score;
+}
+set score(newScore){
+    if (newScore <0){
+        throw new Error ("Score must be greater than 0")
+    }
+    this.#score = newScore;
 }
 updateScore(newScore) {
     this.#score = newScore;
@@ -42,4 +54,14 @@ const player1 = new Player("blue", "Steel");
 // console.log(player1.getScore());
 
 console.log(player1.score);
+player1.score = 28;
+console.log(player1.score);
+
+player1.score
+player1.score = 29;
+player1.fullName
+
+console.log(player1.fullName);
+player1.fullName = "Amy adams";
+console.log(player1);
 
