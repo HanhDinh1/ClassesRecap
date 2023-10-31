@@ -4,9 +4,12 @@ class Player {
 constructor(first, last) {
     this.first = first;
     this.last = last;
-    
+    this.#secret();
 }
-getScore() {
+get fullName() {
+    return `{this.first} {this.last}`;
+}
+get score() {
     return this.#score;
 }
 updateScore(newScore) {
@@ -18,6 +21,9 @@ updateScore(newScore) {
     loseLife() {
         this.numLives -= 1;
     }
+    #secret(){
+        console.log("SECRET!")
+    }
 }   
 
 const player1 = new Player("blue", "Steel");
@@ -25,14 +31,15 @@ const player1 = new Player("blue", "Steel");
 
 // const Player2 = new Player("kenny", "Brow");
 // console.log(Player1.first);
-// console.log(Player1);\
+// console.log(Player1);
 
 // console.log(player1.#numLives);
 // player1.loseLife();
 // console.log(player1.#numLives);
 
-console.log(player1.getScore());
-console.log(player1.updateScore(28));
-console.log(player1.getScore());
+// console.log(player1.getScore());
+// console.log(player1.updateScore(28));
+// console.log(player1.getScore());
 
-console.log(player1);
+console.log(player1.score);
+
