@@ -13,7 +13,8 @@
 // }
 class Player {
     // private score: number = 0;
-    constructor(first, last, _score) {
+    constructor(first, last, _score // Protected - available in the class you define it in, and any classes that inherit from that class.
+    ) {
         this.first = first;
         this.last = last;
         this._score = _score;
@@ -32,6 +33,15 @@ class Player {
             throw new Error("Score cannot be negative!");
         }
         this._score = newScore;
+    }
+}
+class SuperPlayer extends Player {
+    constructor() {
+        super(...arguments);
+        this.isAdmin = true;
+    }
+    maxScore() {
+        this._score = 999;
     }
 }
 const elton = new Player("Elton", "Steele", 100);
