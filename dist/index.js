@@ -47,3 +47,54 @@ class SuperPlayer extends Player {
 const elton = new Player("Elton", "Steele", 100);
 elton.fullName;
 elton.score = 12;
+class Bike {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Jacket {
+    constructor(brand, color) {
+        this.brand = brand;
+        this.color = color;
+    }
+    print() {
+        console.log(`${this.color} ${this.brand} jacket`);
+    }
+}
+const bike1 = new Bike("red");
+const jacket1 = new Jacket("Prada", "black");
+class Employee {
+    // You mark the class abstract, you can't actually instantiate an instance of it anymore.
+    // But you can use the abstract keyword to mark methods as abstract, which means that in a child class, those methods must be implemented.
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    greet() {
+        console.log("HELLO");
+    }
+}
+class FullTimeEmployeen extends Employee {
+    constructor(first, last, salary) {
+        super(first, last);
+        this.salary = salary;
+    }
+    getPay() {
+        return this.salary;
+    }
+}
+class PartTimeEmployeen extends Employee {
+    constructor(first, last, hourlyRate, hourlyWorked) {
+        super(first, last);
+        this.hourlyRate = hourlyRate;
+        this.hourlyWorked = hourlyWorked;
+    }
+    getPay() {
+        return this.hourlyRate * this.hourlyWorked;
+    }
+}
+const betty = new FullTimeEmployeen("Betty", "White", 95000);
+console.log(betty.getPay());
+const bill = new PartTimeEmployeen("Bill", "Billerson", 24, 1100);
+console.log(bill.getPay());
+// Employee - FullTimeEmployee - PartTimeEmployee
